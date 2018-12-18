@@ -25,3 +25,4 @@ $('#add-train-form').on('submit', function(event){
     database.ref('/trains').push(newTrain);
     console.log(newTrain)
 })
+
