@@ -5,3 +5,37 @@
     height: auto;
 
 }
+
+#jumbo-container{
+    border: 5px;
+    border-color: darkgreen;
+    border-style: double;
+
+}
+
+#schedule-container{
+
+    border: 5px;
+    border-color: darkgreen;
+    border-style: double;
+
+}
+
+#form-container{
+    margin-top: 3%;
+    border: 5px;
+    border-color: darkgreen;
+    border-style: double;
+}
+
+#header-text{
+    text-align: center;
+    color: darkgreen;
+    font: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+}
+
+h3{
+    background-color: dimgray;
+    opacity: .7;
+}

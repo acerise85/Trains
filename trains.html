@@ -1,69 +1,84 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
 </head>
+
 <body class="container">
 
+    <div class="jumbotron jumbotron-fluid rounded" id="jumbo-container">
+        <div class="container">
+          <h1 class="display-4">Fluid jumbotron</h1>
+          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+      </div>
 
+  <div id="schedule-container" class="rounded">
     <table class="table table-striped">
-        <thead>
-          <tr>
-            
-            <th scope="col">Train Name</th>
-            <th scope="col">Destination</th>
-            <th scope="col">Frequency (min)</th>
-            <th scope="col">Next Arrival</th>
-            <th scope="col">Minutes Away</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            
-          </tr>
-        </tbody>
-      </table>
-    
-    <form id="add-train-form">
+      <thead>
+        <tr>
+          <th scope="col">Train Name</th>
+          <th scope="col">Destination</th>
+          <th scope="col">Frequency (min)</th>
+          <th scope="col">Next Arrival</th>
+          <th scope="col">Minutes Away</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
+  <div id="form-container" class="rounded">
+    <h3 id="header-text">Add Train</h3>
+    <form id="add-train-form">
+      <div class="form-group">
         <label>Train Name</label>
         <input id="train-name" required>
-
+      </div>
+      <div class="form-group">
         <label>Destination</label>
         <input id="destination" required>
-
+      </div>
+      <div class="form-group">
         <label>First Train Time</label>
         <input id="first-train-time" required>
-
+      </div>
+      <div class="form-group">
         <label>Frequency</label>
         <input id="frequency" required>
-
-        <button type="submit">Submit</button>
+      </div>
+      <button type="submit">Submit</button>
     </form>
+  </div>
 
 
-    
-    
-    
-    
-    
-    
 
 
-    <script src="schedule.js"></script>  
+
+
+
+
+
+  <script src="schedule.js"></script>
 </body>
+
 </html>
