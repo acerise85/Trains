@@ -1,24 +1,30 @@
 
+body{
+
+   background-image: url("../Trains/images/bedge_grunge.png")
+}
+
 #container{
 
     width: 968px;
     height: auto;
-
+   
 }
 
 #jumbo-container{
     border: 5px;
     border-color: darkgreen;
     border-style: double;
-
+    background-image: url("../Trains/images/felt.png") 
 }
+
 
 #schedule-container{
 
     border: 5px;
     border-color: darkgreen;
     border-style: double;
-
+    background-image: url("../Trains/images/ice_age.png") 
 }
 
 #form-container{
@@ -26,6 +32,7 @@
     border: 5px;
     border-color: darkgreen;
     border-style: double;
+    background-image: url("../Trains/images/leather_1.png")  
 }
 
 #header-text{
