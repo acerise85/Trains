@@ -26,3 +26,15 @@ $('#add-train-form').on('submit', function(event){
     console.log(newTrain)
 })
 
+database.ref('/trains').on("child_added", function(childSnapshot) {
+
+  // Log everything that's coming out of snapshot
+  console.log(childSnapshot.val().trainName);
+  console.log(childSnapshot.val().destination);
+  console.log(childSnapshot.val().firstTrainTime);
+  console.log(childSnapshot.val().frequency);
+
+  
+  $('.table tbody').append("<tr><td>" + childSnapshot.val().trainName + "</td><td>" + childSnapshot.val().destination + "</td><td>"  + childSnapshot.val().firstTrainTime + "</td><td>"+"</td><td>" + childSnapshot.val().frequency + "</td><td>"+"</td></tr>");
+  
+})
