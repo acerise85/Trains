@@ -10,17 +10,27 @@
   firebase.initializeApp(config);
 
   var database = firebase.database();
-
-
-$('#add-train-form').on('submit', function(event){
-
+ 
+  
+  
+  
+  var firstTrainTimeFormatted = moment(trainTime).format('h:mm')
+  
+  
+  $('#add-train-form').on('submit', function(event){
+    
+    var trainTime = $('#trainTime').val().trim()
     event.preventDefault();
+    console.log('this is the user value: ' + trainTime)
 
+
+
+    // console.log('this is the formatted value: ' + firstTrainTimeFormatted)
     var newTrain = {
-        trainName: $('#train-name').val(),
-        destination: $('#destination').val(),
-        firstTrainTime: $('#first-train-time').val(),
-        frequency: $('#frequency').val()
+        trainName: $('#train-name').val().trim(),
+        destination: $('#destination').val().trim(),
+        firstTrainTime: trainTime, 
+        frequency: $('#frequency').val().trim()
     }
     database.ref('/trains').push(newTrain);
     console.log(newTrain)
@@ -34,7 +44,21 @@ database.ref('/trains').on("child_added", function(childSnapshot) {
   console.log(childSnapshot.val().firstTrainTime);
   console.log(childSnapshot.val().frequency);
 
+  var fTraintime = moment('#first-train-time',"HH:mm").subtract(1, "years");
+
+  var timeNow = moment();
   
-  $('.table tbody').append("<tr><td>" + childSnapshot.val().trainName + "</td><td>" + childSnapshot.val().destination + "</td><td>"  + childSnapshot.val().firstTrainTime + "</td><td>"+"</td><td>" + childSnapshot.val().frequency + "</td><td>"+"</td></tr>");
+  var tDifference = moment().diff(moment(fTraintime), "minutes");
+  
+  var remainingTime = tDifference % ("#frequency");
+  
+  var minutesLeft = moment(("#frequency") - remainingTime);
+  
+  var nextArrival = moment().add(minutesLeft, "mm");
+ 
+  $('.table tbody').append("<tr><td>" + childSnapshot.val().trainName + "</td><td>" + childSnapshot.val().destination + "</td><td>"  + childSnapshot.val().frequency + "</td><td>"+ nextArrival +"</td><td>" + minutesLeft + "</td><td>"+"</td></tr>");
   
 })
+
+
+

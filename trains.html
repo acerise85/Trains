@@ -24,8 +24,8 @@
 
     <div class="jumbotron jumbotron-fluid rounded" id="jumbo-container">
         <div class="container">
-          <h1 class="display-4">Fluid jumbotron</h1>
-          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          <h1 class="display-4" id="font-color">Fluid jumbotron</h1>
+          <p class="lead" id="font-color">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
         </div>
       </div>
 
@@ -33,11 +33,11 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">Train Name</th>
-          <th scope="col">Destination</th>
-          <th scope="col">Frequency (min)</th>
-          <th scope="col">Next Arrival</th>
-          <th scope="col">Minutes Away</th>
+          <th scope="col" id="font-color">Train Name</th>
+          <th scope="col" id="font-color">Destination</th>
+          <th scope="col" id="font-color">Frequency (min)</th>
+          <th scope="col" id="font-color" id="nextArrival">Next Arrival</th>
+          <th scope="col" id="font-color">Minutes Away</th>
         </tr>
       </thead>
       <tbody>
@@ -48,22 +48,25 @@
   </div>
 
   <div id="form-container" class="rounded">
-    <h3 id="header-text">Add Train</h3>
+    <h4 id="header-text">Add Train</h3>
     <form id="add-train-form">
       <div class="form-group">
-        <label>Train Name</label>
+        <label id="font-color">Train Name</label>
         <input id="train-name" required>
       </div>
       <div class="form-group">
-        <label>Destination</label>
+        <label id="font-color">Destination</label>
         <input id="destination" required>
       </div>
+
       <div class="form-group">
-        <label>First Train Time</label>
-        <input id="first-train-time" required>
+        <label id="font-color">First Train Time</label>
+        <input id="trainTime" required>
       </div>
+
+
       <div class="form-group">
-        <label>Frequency</label>
+        <label id="font-color">Frequency</label>
         <input id="frequency" required>
       </div>
       <button type="submit">Submit</button>

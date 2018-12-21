@@ -37,12 +37,16 @@ body{
 
 #header-text{
     text-align: center;
-    color: darkgreen;
-    font: bold;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    color: darkred;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
-h3{
-    background-color: dimgray;
+h4{
+    background-image: url("../Trains/images/felt.png");
     opacity: .7;
+}
+
+#font-color{
+
+    color: darkred;
 }
