@@ -20,7 +20,12 @@ $(document).ready(function (){
   $('#add-train-form').on('submit', function (event) {
     event.preventDefault();
     var trainTime = $('#trainTime').val().trim()
-    var firstTrainTimeFormatted = moment(trainTime).format('HH:mm')
+    var timeArray =  trainTime.split(":");
+    var firstTrainTimeFormatted = moment().hours(timeArray[0]).minutes(timeArray[1]);
+    var currentTime = moment().format('HH:mm');
+    console.log("CurrentTime: " + currentTime);
+    
+   
     
     
     console.log('this is the user value: ' + trainTime)
@@ -36,11 +41,16 @@ $(document).ready(function (){
     }
     database.ref('/trains').push(newTrain);
     console.log(newTrain)
+    var frequencyFormatted = moment().minutes(frequency).format('mm');
+    var nextArrival = moment(firstTrainTimeFormatted, frequency, 'HH:mm').fromNow(true);
+    console.log("Next Arrival: " + nextArrival);
 
-    var trainTime = moment(firstTrainTimeFormatted, "HH:mm").subtract(1, "years");
+    console.log("This is the formateed frequency: " + frequencyFormatted)
+
+    // var trainTime = moment(firstTrainTimeFormatted, "HH:mm").subtract(1, "years");
     
-    var timeNow = moment();
-    console.log(timeNow);
+    // var timeNow = moment();
+    // console.log(timeNow);
   // var nextArrival = moment(minutesLeft);
 
   // var diff = timeNow.to(nextArrival);
@@ -63,10 +73,32 @@ $(document).ready(function (){
 database.ref('/trains').on("child_added", function (childSnapshot) {
 
     // Log everything that's coming out of snapshot
+    var train = childSnapshot.val().format;
     console.log(childSnapshot.val().trainName);
+
+    var dest = childSnapshot.val().destination;
     console.log(childSnapshot.val().destination);
+
+    var time = childSnapshot.val().firstTrainTime;
     console.log(childSnapshot.val().firstTrainTime);
+
+    var timeArray =  time.split(":");
+    var firstTrainTimeFormatted = moment().hours(timeArray[0]).minutes(timeArray[1]);
+    var currentTime = moment().format('HH:mm');
+   
+    var freq = childSnapshot.val().frequency;
     console.log(childSnapshot.val().frequency);
+
+    var difference = moment().diff(trainTime, 'minutes');
+    console.log("Difference: " + difference);
+    var remainder = difference % freq;
+    console.log("Remainder: " + remainder);
+    var leftOverminutes = freq - remainder;
+    console.log("Left over minutes: " + leftOverminutes);
+    var arrivalTime = moment().add(leftOverminutes, 'm').format('HH:mm A');
+    console.log("Arrival Time: " + arrivalTime);
+
+
 
 
 
