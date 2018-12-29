@@ -21,14 +21,14 @@
 </head>
 
 <body class="container">
-
-    <div class="jumbotron jumbotron-fluid rounded" id="jumbo-container">
-        <div class="container">
-          <h1 class="display-4" id="font-color">Train Schedule</h1>
-          <p class="lead" id="font-color">I know where I'm going, do you wanna come too?</p>
-        </div>
-      </div>
-
+  <!-- First container on HTML page -->
+  <div class="jumbotron jumbotron-fluid rounded" id="jumbo-container">
+    <div class="container">
+      <h1 class="display-4" id="font-color">Train Schedule</h1>
+      <p class="lead" id="font-color">I know where I'm going, do you wanna come too?</p>
+    </div>
+  </div>
+  <!-- Table to hold train schedules -->
   <div id="schedule-container" class="rounded">
     <table class="table table-striped">
       <thead>
@@ -48,39 +48,32 @@
     </table>
   </div>
 
+  <!-- Form for user input -->
   <div id="form-container" class="rounded">
     <h4 id="header-text">Add Train</h3>
-    <form id="add-train-form">
-      <div class="form-group">
-        <label id="font-color">Train Name</label>
-        <input id="train-name" required>
-      </div>
-      <div class="form-group">
-        <label id="font-color">Destination</label>
-        <input id="destination" required>
-      </div>
+      <form id="add-train-form">
+        <div class="form-group">
+          <label id="font-color">Train Name</label>
+          <input id="train-name" required>
+        </div>
+        <div class="form-group">
+          <label id="font-color">Destination</label>
+          <input id="destination" required>
+        </div>
 
-      <div class="form-group">
-        <label id="font-color">First Train Time</label>
-        <input id="trainTime" required>
-      </div>
+        <div class="form-group">
+          <label id="font-color">First Train Time</label>
+          <input id="trainTime" required>
+        </div>
 
 
-      <div class="form-group">
-        <label id="font-color">Frequency</label>
-        <input id="frequency" required>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+        <div class="form-group">
+          <label id="font-color">Frequency</label>
+          <input id="frequency" required>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
   </div>
-
-
-
-
-
-
-
-
 
   <script src="schedule.js"></script>
 </body>
