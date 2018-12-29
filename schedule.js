@@ -82,27 +82,24 @@ database.ref('/trains').on("child_added", function (childSnapshot) {
     var time = childSnapshot.val().firstTrainTime;
     console.log(childSnapshot.val().firstTrainTime);
 
+    var frequency = childSnapshot.val().frequency;
+
     var timeArray =  time.split(":");
-    var firstTrainTimeFormatted = moment().hours(timeArray[0]).minutes(timeArray[1]);
+    var firstTrainTime = moment().hours(timeArray[0]).minutes(timeArray[1]);
     var currentTime = moment().format('HH:mm');
-   
-    var freq = childSnapshot.val().frequency;
-    console.log(childSnapshot.val().frequency);
+    var maxMoment = moment.max(moment(), firstTrainTime);
+      if (maxMoment == firstTrainTime){
+        console.log("Train has not arrived");
+        var minutesAway = firstTrainTime.diff(moment(), "minutes");
+        var nextArrival = firstTrainTime.format("hh:mm a");
+      }
+      else {
+        var minutesAway = frequency - (moment().diff(firstTrainTime, "minutes") % frequency);
+        var nextArrival = moment().add(minutesAway, "minutes").format("hh:mm a");
+        console.log("Train has arrived");
+      }
 
-    var difference = moment().diff(trainTime, 'minutes');
-    console.log("Difference: " + difference);
-    var remainder = difference % freq;
-    console.log("Remainder: " + remainder);
-    var leftOverminutes = freq - remainder;
-    console.log("Left over minutes: " + leftOverminutes);
-    var arrivalTime = moment().add(leftOverminutes, 'm').format('HH:mm A');
-    console.log("Arrival Time: " + arrivalTime);
-
-
-
-
-
-    $('.table tbody').append("<tr><td>" + childSnapshot.val().trainName + "</td><td>" + childSnapshot.val().destination + "</td><td>" + childSnapshot.val().frequency + "</td><td>"  + "</td><td>"  + "</td><td>" + "</td></tr>");
+    $('.table tbody').append("<tr><td>" + childSnapshot.val().trainName + "</td><td>" + childSnapshot.val().destination + "</td><td>"+ firstTrainTime.format("hh:mm a") + "</td><td>" + childSnapshot.val().frequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td><td>" + "</td></tr>");
 
   })
 
