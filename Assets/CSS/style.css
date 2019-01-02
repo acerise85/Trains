@@ -1,7 +1,7 @@
 /* Body background color */
 body{
 
-   background-image: url("../Trains/images/bedge_grunge.png")
+   background-image: url("../images/bedge_grunge.png")
 }
 /* Schedule container */
 #container{
@@ -14,7 +14,7 @@ body{
     border: 5px;
     border-color: darkgreen;
     border-style: double;
-    background-image: url("../Trains/images/felt.png");
+    background-image: url("../images/felt.png");
     text-align: center;
 }
 
@@ -23,7 +23,7 @@ body{
     border: 5px;
     border-color: darkgreen;
     border-style: double;
-    background-image: url("../Trains/images/ice_age.png") 
+    background-image: url("../images/ice_age.png") 
 }
 /* Ccontainer for form with border */
 #form-container{
@@ -31,7 +31,7 @@ body{
     border: 5px;
     border-color: darkgreen;
     border-style: double;
-    background-image: url("../Trains/images/leather_1.png")  
+    background-image: url("../images/leather_1.png")  
 }
 /* Header text style for adding a train */
 #header-text{
@@ -41,7 +41,7 @@ body{
 }
 /* background for header to add train */
 h4{
-    background-image: url("../Trains/images/felt.png");
+    background-image: url("../images/felt.png");
     opacity: .7;
 }
 /* font color for all elements on page */
