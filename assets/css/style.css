@@ -1,0 +1,51 @@
+/* Body background color */
+body{
+
+   background-image: url("../images/bedge_grunge.png")
+}
+/* Schedule container */
+#container{
+
+    width: 968px;
+    height: auto;
+}
+/* Jumbo container border */
+#jumbo-container{
+    border: 5px;
+    border-color: darkgreen;
+    border-style: double;
+    background-image: url("../images/felt.png");
+    text-align: center;
+}
+
+/* Border for schedule display */
+#schedule-container{
+    border: 5px;
+    border-color: darkgreen;
+    border-style: double;
+    background-image: url("../images/ice_age.png") 
+}
+/* Ccontainer for form with border */
+#form-container{
+    margin-top: 3%;
+    border: 5px;
+    border-color: darkgreen;
+    border-style: double;
+    background-image: url("../images/leather_1.png")  
+}
+/* Header text style for adding a train */
+#header-text{
+    text-align: center;
+    color: darkred;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+/* background for header to add train */
+h4{
+    background-image: url("../images/felt.png");
+    opacity: .7;
+}
+/* font color for all elements on page */
+#font-color{
+
+    color: darkred;
+}
